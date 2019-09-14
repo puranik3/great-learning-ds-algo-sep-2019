@@ -70,21 +70,24 @@ public class LinkedList {
 
         int carry = 0, sum = 0;
 
-        for( Node curX = x.head.next, curY = y.head.next; curX.next != null || curY.next != null || carry != 0; ) {
+        for( Node curX = x.head.next, curY = y.head.next; curX != null || curY != null || carry != 0; ) {
             sum = carry;
 
-            if( curX.next != null ) {
+            if( curX != null ) {
                 sum = sum + curX.data;
                 curX = curX.next;
-            }
+            } 
             
-            if( curY.next != null ) {
+            if( curY != null ) {
                 sum = sum + curY.data;
                 curY = curY.next;
             }
 
             carry = sum / 10;
             z.push( sum % 10 );
+
+            System.out.println( "sum = " + sum );
+            System.out.println( "carry = " + carry );
         }
 
         return z;
