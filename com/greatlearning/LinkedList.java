@@ -41,4 +41,21 @@ public class LinkedList {
         Node temp = head.next;
         head.next = temp.next;
     }
+
+    public void push( Integer data ) {
+        // add a new node to the end of the linked list
+        Node last = head;
+
+        for( Node cur = head.next; cur != null; cur = cur.next ) {
+            last = cur;
+        }
+
+        last.next = new Node( data );
+    }
+
+    public void pop() {
+        // remove the last node of the list
+        // 5 minutes
+        
+    }
 }
