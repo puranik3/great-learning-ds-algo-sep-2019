@@ -19,4 +19,13 @@ public class BigInt {
     public void print() {
         number.print();
     }
+
+    public BigInt add( BigInt y ) {
+        BigInt x = this;
+        BigInt z = new BigInt();
+
+        z.number = x.number.add( y.number );
+
+        return z;
+    }
 }

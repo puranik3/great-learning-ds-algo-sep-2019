@@ -7,5 +7,8 @@ public class BigIntTest {
 
         x.print();
         y.print();
+
+        BigInt z = x.add( y );
+        z.print();
     }
 }

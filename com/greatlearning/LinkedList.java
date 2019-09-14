@@ -63,4 +63,30 @@ public class LinkedList {
 
         last.next = null;
     }
+
+    public LinkedList add( LinkedList y ) {
+        LinkedList x = this;
+        LinkedList z = new LinkedList();
+
+        int carry = 0, sum = 0;
+
+        for( Node curX = x.head, curY = y.head; curX.next != null || curY.next != null || carry != 0; ) {
+            sum = carry;
+
+            if( curX.next != null ) {
+                sum = sum + curX.data;
+                curX = curX.next;
+            }
+            
+            if( curY.next != null ) {
+                sum = sum + curY.data;
+                curY = curY.next;
+            }
+
+            carry = sum / 10;
+            z.push( sum % 10 );
+        }
+
+        return z;
+    }
 }
