@@ -55,7 +55,12 @@ public class LinkedList {
 
     public void pop() {
         // remove the last node of the list
-        // 5 minutes
+        Node last = head;
         
+        for( Node cur = head.next; cur.next != null; cur = cur.next ) {
+            last = cur;
+        }
+
+        last.next = null;
     }
 }
