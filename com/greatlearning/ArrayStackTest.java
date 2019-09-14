@@ -5,6 +5,9 @@ public class ArrayStackTest {
 
     public static void main(String[] args) {
         testPush();
+        testPop();
+        testPeek();
+        testSize();
     }
 
     private static void createStack() {
@@ -27,14 +30,22 @@ public class ArrayStackTest {
     }
 
     private static void testPop() {
-        // write your code here...
+        createStack();
+
+        System.out.println( primesStack.pop() );
+        System.out.println( primesStack );
     }
     
     private static void testPeek() {
-        // write your code here...
+        createStack();
+
+        System.out.println( primesStack.peek() );
+        System.out.println( primesStack );
     }
     
     private static void testSize() {
-        // write your code here...
+        createStack();
+
+        System.out.println( primesStack.size() );
     }
 }

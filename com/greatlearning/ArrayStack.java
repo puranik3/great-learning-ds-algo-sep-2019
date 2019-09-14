@@ -20,11 +20,11 @@ public class ArrayStack<T> implements Stack<T> {
         }
 
         --head;
-        return stack[head + 1];
+        return stack[head];
     }
 
     public T peek() {
-        return stack[head];
+        return stack[head - 1];
     }
 
     public int size() {
