@@ -85,9 +85,6 @@ public class LinkedList {
 
             carry = sum / 10;
             z.push( sum % 10 );
-
-            System.out.println( "sum = " + sum );
-            System.out.println( "carry = " + carry );
         }
 
         return z;
