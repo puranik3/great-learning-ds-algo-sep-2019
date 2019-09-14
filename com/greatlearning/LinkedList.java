@@ -70,7 +70,7 @@ public class LinkedList {
 
         int carry = 0, sum = 0;
 
-        for( Node curX = x.head, curY = y.head; curX.next != null || curY.next != null || carry != 0; ) {
+        for( Node curX = x.head.next, curY = y.head.next; curX.next != null || curY.next != null || carry != 0; ) {
             sum = carry;
 
             if( curX.next != null ) {
