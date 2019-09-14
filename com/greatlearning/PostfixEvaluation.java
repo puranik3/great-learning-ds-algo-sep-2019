@@ -10,13 +10,20 @@ public class PostfixEvaluation {
             if( isOperator( args[i] ) ) {
                 y = Double.parseDouble( (String) expressions.pop() );
                 x = Double.parseDouble( (String) expressions.pop() );
-
-                expressions.pop();
+                
                 z = evaluate( x, y, args[i] );
 
                 expressions.push( "" + z );
+
+                System.out.println( "operator" );
+                System.out.println( args[i] );
+                System.out.println( expressions );
             } else {
                 expressions.push( args[i] );
+
+                System.out.println( "operand" );
+                System.out.println( args[i] );
+                System.out.println( expressions );
             }
         }
 
