@@ -27,7 +27,18 @@ public class LinkedList {
         head.next = new Node( data, head.next );
     }
 
-    public String toString() {
-        
+    public void print() {
+        for( Node cur = head.next; cur != null; cur = cur.next ) {
+            System.out.println( cur.data );
+        }
+    }
+
+    public void shift() {
+        if( head.next == null ) {
+            return;
+        }
+
+        Node temp = head.next;
+        head.next = temp.next;
     }
 }
