@@ -40,7 +40,7 @@ public class ArrayQueue implements Queue {
         // return the element at the beginning of the array
         
         if( tail == -1 ) {
-            throw new IllegalStateException( "queue is empty" );
+            return null;
         }
 
         return queue[0];
@@ -50,5 +50,9 @@ public class ArrayQueue implements Queue {
         // return the size of the LL
 
         return tail + 1;
+    }
+
+    public String toString() {
+        return "str representation";
     }
 }

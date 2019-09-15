@@ -14,6 +14,32 @@ public class GainsCalculator {
     }
 
     private static void printGains() {
+        Transaction sellTransaction, buyTransaction;
+        int buyNumShares, sellNumShares, minNumShares;
+        Double gains = 0.0;
+
         // calculate and print gains when shares are sold
+        while( sell.peek() != null ) {
+            sellTransaction = (Transaction) sell.peek();
+            buyTransaction = (Transaction) buy.peek();
+
+            buyNumShares = buyTransaction.getNumShares();
+            sellNumShares = sellTransaction.getNumShares();
+
+            minNumShares = Math.min( buyNumShares, sellNumShares );
+
+            if( buyTransaction.getNumShares() == 0 ) {
+                buy.dequeue();
+            }
+
+            if( sellTransaction.getNumShares() == 0 ) {
+                sell.dequeue();
+
+                gains = gains + ( sellTransaction.getPrice() - buyTransaction.getPrice() ) * minNumShares;
+
+                System.out.println( "gains on " + sellTransaction.getDate() + " = " + gains );
+                gains = 0.0;
+            }
+        }
     }
 }

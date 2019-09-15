@@ -20,6 +20,10 @@ public class Transaction {
         return this.numShares;
     }
 
+    public String getDate() {
+        return this.date;
+    }
+
     public void reduceNumShares( int numToReduceBy ) {
         if( this.numShares - numToReduceBy < 0 ) {
             throw new IllegalStateException( "cannot reduce by amount that exceeds number of shares" );
