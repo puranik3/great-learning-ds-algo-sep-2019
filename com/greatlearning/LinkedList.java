@@ -16,6 +16,7 @@ public class LinkedList {
     }
 
     Node head = new Node( 0 );
+    int size = 0;
 
     // unshift adds a new Node to the beginning of the linked list
     public void unshift( Integer data ) {
@@ -25,6 +26,7 @@ public class LinkedList {
         // newNode.next = temp;
 
         head.next = new Node( data, head.next );
+        size++;
     }
 
     public void print() {
@@ -40,6 +42,7 @@ public class LinkedList {
 
         Node temp = head.next;
         head.next = temp.next;
+        size--;
     }
 
     public void push( Integer data ) {
@@ -51,6 +54,7 @@ public class LinkedList {
         }
 
         last.next = new Node( data );
+        size++;
     }
 
     public void pop() {
@@ -62,6 +66,7 @@ public class LinkedList {
         }
 
         last.next = null;
+        size--;
     }
 
     public LinkedList add( LinkedList y ) {
