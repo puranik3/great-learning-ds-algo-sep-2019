@@ -18,6 +18,16 @@ public class LinkedList {
     Node head = new Node( 0 );
     int size = 0;
 
+    public void print() {
+        for( Node cur = head.next; cur != null; cur = cur.next ) {
+            System.out.println( cur.data );
+        }
+    }
+
+    public int size() {
+        return size;
+    }
+
     // unshift adds a new Node to the beginning of the linked list
     public void unshift( Integer data ) {
         // Node newNode = new Node( data );
@@ -27,12 +37,6 @@ public class LinkedList {
 
         head.next = new Node( data, head.next );
         size++;
-    }
-
-    public void print() {
-        for( Node cur = head.next; cur != null; cur = cur.next ) {
-            System.out.println( cur.data );
-        }
     }
 
     public void shift() {
