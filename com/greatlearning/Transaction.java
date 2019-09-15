@@ -9,7 +9,6 @@ public class Transaction {
         this.numShares = numShares;
         this.price = price;
         this.date = date;
-        this.date = date;
     }
 
     public Double getPrice() {
@@ -30,5 +29,9 @@ public class Transaction {
         }
 
         this.numShares = this.numShares - numToReduceBy;
+    }
+
+    public String toString() {
+        return "[ shares = " + this.numShares + "; price = " + this.price + "; date = " + this.date + "]";
     }
 }

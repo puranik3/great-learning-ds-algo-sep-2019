@@ -23,17 +23,31 @@ public class GainsCalculator {
             sellTransaction = (Transaction) sell.peek();
             buyTransaction = (Transaction) buy.peek();
 
+            System.out.println( "buy transaction is..." );
+            System.out.println( buyTransaction );
+
+            System.out.println( "sell transaction is..." );
+            System.out.println( sellTransaction );
+
             buyNumShares = buyTransaction.getNumShares();
             sellNumShares = sellTransaction.getNumShares();
 
             minNumShares = Math.min( buyNumShares, sellNumShares );
 
+            buyTransaction.reduceNumShares( minNumShares );
+            sellTransaction.reduceNumShares( minNumShares );
+
             if( buyTransaction.getNumShares() == 0 ) {
                 buy.dequeue();
+                System.out.println( "*** dequeued from buy. buy looks like this... ***" );
+                buy.print();
             }
 
             if( sellTransaction.getNumShares() == 0 ) {
                 sell.dequeue();
+
+                System.out.println( "*** dequeued from sell. sell looks like this... ***" );
+                sell.print();
 
                 gains = gains + ( sellTransaction.getPrice() - buyTransaction.getPrice() ) * minNumShares;
 

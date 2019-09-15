@@ -52,7 +52,10 @@ public class ArrayQueue implements Queue {
         return tail + 1;
     }
 
-    public String toString() {
-        return "str representation";
+    public void print() {
+        for( int i = 0; i <= tail; i++ ) {
+            System.out.print( queue[i] + "  " );
+        }
+        System.out.println();
     }
 }
