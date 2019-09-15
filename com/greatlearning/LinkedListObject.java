@@ -1,6 +1,6 @@
 package com.greatlearning;
 
-public class LinkedList {
+public class LinkedListObject {
     private static class Node {
         Integer data;
         Node next;
