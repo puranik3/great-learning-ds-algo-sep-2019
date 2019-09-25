@@ -1,5 +1,6 @@
-com/digdeeper/
-com/hackerrank/
+com/**
+!com/**/*.java
+com/digdeeper/**
+com/hackerrank/**
 launch.json
 settings.json
-com/**/*.class
